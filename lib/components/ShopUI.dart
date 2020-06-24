@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ShopUI extends StatelessWidget {
   @override
@@ -12,30 +13,35 @@ class ShopUI extends StatelessWidget {
             subTitle:
                 'My Dream Come True',
             image: 'assets/day15_ShoeShop.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day15',
           ),
           ItemCard(
             title: 'Carousal Application',
             subTitle:
                 'What is the Downside to eating a Clock?',
             image: 'assets/day18_Carousal.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day18',
           ),
           ItemCard(
             title: 'E-Commerce Application',
             subTitle:
                 "Spending's Day",
             image: 'assets/day16_ECommerce.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day16',
           ),
           ItemCard(
             title: "Sock's Shop",
             subTitle:
                 'Mom!! Where is my another sock!!',
             image: 'assets/day20_SocketShop.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day20',
           ),
           ItemCard(
             title: "Furniture's Shop",
             subTitle:
                 'Feeling Puffy',
             image: 'assets/day10_FurnituresShop.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day10',
           ),
         ],
       ),
@@ -43,7 +49,7 @@ class ShopUI extends StatelessWidget {
   }
 }
 
-Widget ItemCard({title, subTitle, image}) {
+Widget ItemCard({title, subTitle, image, url}) {
   return Container(
     width: double.infinity,
     margin: EdgeInsets.only(bottom: 20.0),
@@ -111,7 +117,7 @@ Widget ItemCard({title, subTitle, image}) {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () => launch(url),
                     color: Colors.grey[900],
                     child: Text(
                       'View Github',

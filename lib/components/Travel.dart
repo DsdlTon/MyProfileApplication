@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Travel extends StatelessWidget {
   @override
@@ -12,24 +13,28 @@ class Travel extends StatelessWidget {
             subTitle:
                 'Camera And Me',
             image: 'assets/day22_Photography.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day22',
           ),
           ItemCard(
             title: 'Finding Inspiration',
             subTitle:
                 'Out of Gas??, Come Closer.',
             image: 'assets/day1_Inspiration.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day1',
           ),
           ItemCard(
             title: 'Travel Guide',
             subTitle:
                 "1's Rule of Travel: Money",
             image: 'assets/day2_TravelGuide.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day2',
           ),
           ItemCard(
             title: 'Travel Application',
             subTitle:
                 "2's Rule of Travel: Money",
             image: 'assets/day11_TravelApplication.png',
+            url: 'https://github.com/DsdlTon/Flutter100Days/tree/master/lib/day11',
           ),
         ],
       ),
@@ -37,7 +42,7 @@ class Travel extends StatelessWidget {
   }
 }
 
-Widget ItemCard({title, subTitle, image}) {
+Widget ItemCard({title, subTitle, image, url}) {
   return Container(
     width: double.infinity,
     margin: EdgeInsets.only(bottom: 20.0),
@@ -105,7 +110,7 @@ Widget ItemCard({title, subTitle, image}) {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () => launch(url),
                     color: Colors.grey[900],
                     child: Text(
                       'View Github',
@@ -121,3 +126,4 @@ Widget ItemCard({title, subTitle, image}) {
     ),
   );
 }
+
